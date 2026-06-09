@@ -1,0 +1,40 @@
+
+.typing-text{
+
+    font-size:55px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    border-right:4px solid white;
+
+    width:10ch;
+
+    animation:
+        typing 4s steps(22) forwards,
+        blink 0.5s infinite;
+
+    
+}
+
+@keyframes typing{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:22ch;
+    }
+}
+
+@keyframes blink{
+
+    50%{
+        border-color:transparent;
+    }
+}
+
+
+

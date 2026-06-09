@@ -1,0 +1,144 @@
+/* Background Image */
+.bg-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    
+    
+    background-image: url("../images/bgimage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    filter: blur(5px) brightness(3.4);
+
+    transform: scale(1.15);
+
+    z-index: -2;
+}
+.bg-image::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.45)
+    );
+}
+
+/* Dark Overlay */
+.bg-image::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+
+    z-index: -1;
+}
+
+
+.card p{
+    color:#BDEFFF;
+    font-family: 'Great Vibes', cursive;
+    text-shadow:0 2px 5px rgba(0,0,0,0.5);
+
+    font-size:20px;
+    line-height:1.8;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #BDEFFF, #1a001a);
+    overflow:hidden;
+    
+}
+
+/* 🔥 WRAPPER */
+.wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}
+
+/* 💌 CARD */
+.card{
+	
+    width:600px;
+    padding:25px;
+    border-radius:25px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color:white;
+    text-align:center;
+
+    box-shadow:
+    0 0 20px rgba(135,206,250,0.5),
+    0 0 40px rgba(173,216,230,0.3);
+}
+
+
+/* 🖼 SIDE IMAGES */
+.side-img{
+	
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    
+    
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 20px rgba(135,206,250,0.5),
+    0 0 40px rgba(173,216,230,0.3);
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.left-photo{
+    position:absolute;
+    left:calc(48% - 550px);
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.right-photo{
+    position:absolute;
+    right:calc(45% - 550px);
+    top:50%;
+    transform:translateY(-50%);
+}
+.card{
+    max-width:650px;
+}
+/* left slight rotate */
+.left{
+    transform: rotate(-8deg);
+}
+
+/* right slight rotate */
+.right{
+    transform: rotate(8deg);
+}
+
+/* floating animation */
+@keyframes float{
+    0%{ transform: translateY(0px) rotate(8deg); }
+    50%{ transform: translateY(-10px) rotate(8deg); }
+    100%{ transform: translateY(0px) rotate(8deg); }
+}
